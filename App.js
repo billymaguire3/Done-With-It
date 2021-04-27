@@ -5,10 +5,8 @@ import WelcomeScreen from "./src/screens/WelcomeScreen";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
-    </View>
+    <WelcomeScreen />
+    // {/* <ViewImageScreen /> */}
   );
 }
 

@@ -1,65 +1,46 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 
-const image = require("../../assets/background.jpg");
+const backgroundImage = require("../assets/background.jpg");
+const logoImage = require("../assets/logo-red.png");
 
 <script src="http://localhost:8097"></script>;
 export default function WelcomeScreen() {
   return (
-    <ImageBackground source={image} style={styles.imageContainer}>
+    <ImageBackground source={backgroundImage} style={styles.background}>
       <View style={styles.logoContainer}>
-        <Image
-          style={styles.logoImage}
-          source={require("../../assets/logo-red.png")}
-        />
-        <Text style={styles.text}>Sell What You Don't Need</Text>
+        <Image style={styles.logoImage} source={logoImage} />
+        <Text>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.buttonContainer}>
-        <View
-          style={{
-            backgroundColor: "#fc5c65",
-            width: "100%",
-            height: 75,
-          }}
-        />
-        <View
-          style={{
-            backgroundColor: "#4ECDC4",
-            width: "100%",
-            height: 75,
-          }}
-        />
-      </View>
+      <View style={styles.loginButton}></View>
+      <View style={styles.registerButton}></View>
     </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  imageContainer: {
+  background: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-  },
-  logoContainer: {
-    flex: 0.5,
-    justifyContent: "center",
-    width: "auto",
-    height: 20,
+    justifyContent: "flex-end",
     alignItems: "center",
   },
-  text: {
-    color: "black",
-    fontSize: 12,
-    textAlign: "center",
+  loginButton: {
+    width: "100%",
+    height: 70,
+    backgroundColor: "#fc5c65",
+  },
+  logoContainer: {
+    position: "absolute",
+    top: 70,
+    alignItems: "center",
   },
   logoImage: {
-    width: "85%",
-    height: "35%",
-    resizeMode: "contain",
+    width: 100,
+    height: 100,
   },
-  buttonContainer: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
+  registerButton: {
+    width: "100%",
+    height: 70,
+    backgroundColor: "#4ecdc4",
   },
 });

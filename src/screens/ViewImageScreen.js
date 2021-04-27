@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, View, StyleSheet, SafeAreaView } from "react-native";
 
-const image = require("../../assets/chair.jpg");
+const image = require("../assets/chair.jpg");
 
 export default function ViewImageScreen() {
   return (
