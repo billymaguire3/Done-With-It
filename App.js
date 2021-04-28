@@ -8,16 +8,9 @@ import ViewImageScreen from "./src/screens/ViewImageScreen";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
 
 export default function App() {
-  function handleLoginButtonPress() {
-    console.log("login button tapped");
-  }
-
   return (
-    // <WelcomeScreen />
     // <ViewImageScreen />
-    <View style={styles.container}>
-      <AppButton title="login" onPress={handleLoginButtonPress} />
-    </View>
+    <WelcomeScreen />
   );
 }
 

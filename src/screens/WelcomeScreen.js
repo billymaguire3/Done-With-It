@@ -1,19 +1,39 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 
+import AppButton from "../components/AppButton";
+import colors from "../config/color";
+
 const backgroundImage = require("../assets/background.jpg");
 const logoImage = require("../assets/logo-red.png");
 
-<script src="http://localhost:8097"></script>;
 export default function WelcomeScreen() {
+  function handleLoginButtonPress() {
+    console.log("login button tapped");
+  }
+
   return (
-    <ImageBackground source={backgroundImage} style={styles.background}>
+    <ImageBackground
+      blurRadius={5}
+      source={backgroundImage}
+      style={styles.background}
+    >
       <View style={styles.logoContainer}>
         <Image style={styles.logoImage} source={logoImage} />
-        <Text>Sell What You Don't Need</Text>
+        <Text style={styles.text}>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <View style={styles.buttonContainer}>
+        <AppButton
+          color={colors.primary}
+          title="login"
+          onPress={handleLoginButtonPress}
+        />
+        <AppButton
+          color={colors.secondary}
+          title="register"
+          onPress={handleLoginButtonPress}
+        />
+      </View>
     </ImageBackground>
   );
 }
@@ -23,6 +43,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+  buttonContainer: {
+    flex: 0.2,
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "100%",
+    paddingHorizontal: 20,
   },
   loginButton: {
     width: "100%",
@@ -42,5 +69,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 70,
     backgroundColor: "#4ecdc4",
+  },
+  text: {
+    fontSize: 22,
+    fontWeight: "bold",
+    paddingTop: 10,
   },
 });
