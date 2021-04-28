@@ -11,27 +11,30 @@ export default function WelcomeScreen() {
   function handleLoginButtonPress() {
     console.log("login button tapped");
   }
+  function handleRegisterButtonPress() {
+    console.log("register button tapped");
+  }
 
   return (
     <ImageBackground
-      blurRadius={5}
+      blurRadius={10}
       source={backgroundImage}
       style={styles.background}
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logoImage} source={logoImage} />
-        <Text style={styles.text}>Sell What You Don't Need</Text>
+        <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton
-          color={colors.primary}
+          color="primary"
           title="login"
           onPress={handleLoginButtonPress}
         />
         <AppButton
-          color={colors.secondary}
+          color="secondary"
           title="register"
-          onPress={handleLoginButtonPress}
+          onPress={handleRegisterButtonPress}
         />
       </View>
     </ImageBackground>
@@ -45,16 +48,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonContainer: {
-    flex: 0.2,
-    justifyContent: "space-evenly",
-    alignItems: "center",
     width: "100%",
     paddingHorizontal: 20,
-  },
-  loginButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
+    paddingBottom: 30,
   },
   logoContainer: {
     position: "absolute",
@@ -65,14 +61,9 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
-  },
-  text: {
-    fontSize: 22,
-    fontWeight: "bold",
-    paddingTop: 10,
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
   },
 });

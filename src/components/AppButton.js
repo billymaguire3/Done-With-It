@@ -6,14 +6,7 @@ import colors from "../config/color";
 function AppButton({ color, onPress, title }) {
   return (
     <TouchableOpacity
-      style={{
-        backgroundColor: color,
-        alignItems: "center",
-        borderRadius: 25,
-        justifyContent: "center",
-        padding: 15,
-        width: "100%",
-      }}
+      style={[styles.button, { backgroundColor: colors[color] }]}
       onPress={onPress}
     >
       <Text style={styles.buttonText}>{title}</Text>
@@ -22,6 +15,14 @@ function AppButton({ color, onPress, title }) {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    alignItems: "center",
+    borderRadius: 25,
+    justifyContent: "center",
+    padding: 15,
+    width: "100%",
+    marginVertical: 10,
+  },
   buttonText: {
     color: colors.white,
     fontWeight: "bold",
