@@ -6,11 +6,19 @@ import AppButton from "./src/components/AppButton";
 import colors from "./src/config/color";
 import ViewImageScreen from "./src/screens/ViewImageScreen";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
+import Card from "./src/components/Card";
 
 export default function App() {
   return (
     // <ViewImageScreen />
-    <WelcomeScreen />
+    // <WelcomeScreen />
+    <View style={styles.container}>
+      <Card
+        title="Red Jacket for sale!"
+        subtitle="$100"
+        image={require("./src/assets/jacket.jpg")}
+      />
+    </View>
   );
 }
 
