@@ -2,7 +2,6 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 
 import AppButton from "../components/AppButton";
-import colors from "../config/color";
 
 const backgroundImage = require("../assets/background.jpg");
 const logoImage = require("../assets/logo-red.png");
