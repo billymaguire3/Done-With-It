@@ -12,7 +12,13 @@ export default function App() {
   return (
     // <ViewImageScreen />
     // <WelcomeScreen />
-    <View style={styles.container}>
+    <View
+      style={{
+        backgroundColor: "#f8f4f4",
+        padding: 20,
+        paddingTop: 100,
+      }}
+    >
       <Card
         title="Red Jacket for sale!"
         subtitle="$100"
