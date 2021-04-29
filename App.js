@@ -7,22 +7,22 @@ import colors from "./src/config/color";
 import ViewImageScreen from "./src/screens/ViewImageScreen";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
 import Card from "./src/components/Card";
-import ListingDetails from "./src/components/ListingDetails";
+import ListingDetailsScreen from "./src/screens/ListingDetailsScreen";
 
 export default function App() {
   return (
-    // <ViewImageScreen />
+    <ViewImageScreen />
     // <WelcomeScreen />
     // {/* <Card
     //   title="Red Jacket for sale!"
     //   subtitle="$100"
     //   image={require("./src/assets/jacket.jpg")}
     // /> */}
-    <ListingDetails
-      image={require("./src/assets/jacket.jpg")}
-      title="Red Jacket For Sale!"
-      subtitle="$100"
-    />
+    // <ListingDetailsScreen
+    //   image={require("./src/assets/jacket.jpg")}
+    //   title="Red Jacket For Sale!"
+    //   subtitle="$100"
+    // />
   );
 }
 

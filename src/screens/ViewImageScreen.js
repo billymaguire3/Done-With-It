@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, View, StyleSheet, SafeAreaView } from "react-native";
+import { AntDesign, Feather } from "@expo/vector-icons";
 
 import colors from "../config/color";
 
@@ -8,8 +9,18 @@ const image = require("../assets/chair.jpg");
 export default function ViewImageScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.closeIcon}></View>
-      <View style={styles.deleteIcon}></View>
+      <Feather
+        style={styles.closeIcon}
+        name="x"
+        size={35}
+        color={colors.white}
+      />
+      <AntDesign
+        style={styles.deleteIcon}
+        name="delete"
+        size={35}
+        color={colors.white}
+      />
       <Image source={image} style={styles.image} />
     </View>
   );
@@ -17,11 +28,8 @@ export default function ViewImageScreen() {
 
 const styles = StyleSheet.create({
   closeIcon: {
-    backgroundColor: colors.primary,
-    width: 50,
-    height: 50,
     position: "absolute",
-    top: 40,
+    top: 50,
     left: 30,
   },
   container: {
@@ -29,12 +37,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
   },
   deleteIcon: {
-    backgroundColor: colors.secondary,
-    width: 50,
-    height: 50,
     position: "absolute",
     right: 30,
-    top: 40,
+    top: 50,
   },
   image: {
     width: "100%",
