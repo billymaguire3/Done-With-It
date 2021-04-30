@@ -27,8 +27,30 @@ const initialMessages = [
   },
 ];
 
+const altMessages = [
+  {
+    id: 1,
+    title: "Title 1",
+    description: "Description 1",
+    image: require("../assets/billy.jpg"),
+  },
+  {
+    id: 2,
+    title: "Title 2",
+    description: "Description 2",
+    image: require("../assets/billy.jpg"),
+  },
+  {
+    id: 3,
+    title: "3",
+    description: "Description 3",
+    image: require("../assets/billy.jpg"),
+  },
+];
+
 function MessageScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleItemDelete = (message) => {
     setMessages(messages.filter((m) => m.id !== message.id));
@@ -51,6 +73,10 @@ function MessageScreen(props) {
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages(altMessages);
+        }}
       />
     </Screen>
   );
